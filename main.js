@@ -63,14 +63,41 @@ function fetchComments(kids, storyId){
 		renderComments(comments, storyId);
 	})
 }
-function fetchOrToggleComments(){
-
+function fetchOrToggleComments(kids, storyId){
+	function toggleAllComments(storyId) {
+		const allComments = document.getElementById(`comments-${storyId}`);
+		allComments.style.display = (allComments.style.display === 'block') ? 'none' : 'block';
+	}
+	state[storyId] ? toggleAllComments(storyId) : fetchComments(kids, storyId)
 }
 function ToggleComment(){
-
+	const comment = document.getElementById(commentId)
+	const toggle = document.getElementById(`toggle-${commentId}`)
+	comment.style.display = (comment.style.display === 'block') ? 'none' : 'block'
+	toggle.innerHTML = (toggle.innerHTML === '[ - ]') ? '[ + ]' : '[ - ]'
 }
 
-function renderComments(){
-
+function renderComments(comments, storyId){
+	return comments.map((comment) => {
+		const userUrl = `https://news.ycombinator.com/user?id=${comment.by}`;
+		const html = comment.deleted || comment.dead ? '' : `
+			<div class='comment'>
+			<span onclick='toggleComment("${comment.id}")'
+				href='javascript:void(0)'
+				id='toggle-${comment.id}'
+				class='toggle-comment'>[ - ]</span>
+			<a href='${userUrl}' class='comment-by'> ${comment.by}</a>	
+			<div id=${comment.id} class='comment-text' style='display:block;'>
+			${comment.text}
+			</div>
+			</div> 
+		`
+		comment.parent == 
+			storyId ?
+			document.getElementById(`comments-${storyId}`).insertAdjacentHTML('beforeend', html):
+			document.getElementById(comment.parent).insertAdjacentHTML('beforeend', html);
+		if (comment.kids) 
+			return fetchComments(comment.kids.toString(), storyId);
+  })
 }
 fetchTopStories();

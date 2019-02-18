@@ -1,1 +1,74 @@
-"styles.css" 
+   body {
+      background-color: #282828;
+      font-family: "Helvetica Neue", "Helvetica", Arial, sans-serif;
+      font-size: 18px;
+      line-height: 1.6;
+      color: #bdc3c7;
+      margin: 65px 0;
+    }
+    a { text-decoration: none; color: #2ecc71; }
+    a:hover { color: #27ae60; }
+    header {
+      height: 40px;
+      background-color: #333;
+      text-align: center;
+      width: 100%;
+      z-index: 999;
+      position: fixed;
+      top: 0;
+    }
+    header a {
+      color: #27ae60;
+      font-size: 22px;
+    }
+    h2 { text-align: center; }
+    h3 { margin: 0; font-size: 22px; }
+    .main { margin: 0 auto; }
+    .score {
+      font-size: 20px;
+      color: #f1c40f;
+      margin-right: 4px;
+    }
+    .story {
+      margin: 4px;
+      padding: 8px;
+      border: 1px solid #444;
+    }
+    .storyText { margin-top: 8px; }
+    .comments {
+      color: #1abc9c;
+      cursor: pointer;
+      font-size: 20px;
+    }
+    .comments:hover { color: #16a085; }
+    .story-by,
+    .comment-by {
+      font-size: 20px;
+      color: #7f8c8d;
+      margin-left: 4px;
+      margin-right: 4px;
+    }
+    .story-by:hover,
+    .comment-by:hover{ color: #bdc3c7; }
+    .comment {
+      padding: 0 4px;
+      border: 1px solid #444;
+      margin-top: 4px;
+    }
+    .comment-text { padding: 8px; overflow-x: scroll; }
+    .toggle-comment { color: #1abc9c; cursor: pointer; }
+    .toggle-comment:hover { color: #16a085; }
+    .hnLink { color: #e67e22; }
+    .hnLink:hover { color: #d35400; }
+    .copyright {
+      text-align:center;
+      font-size:10px;
+      margin-top: 40px;
+    }
+    @media (min-width: 720px) {
+      .toggle-view{ display: inline; }
+      .main { max-width: 80%; }
+    }
+    @media (max-width: 1000px) {
+      .main { max-width: 100%; }
+    }
