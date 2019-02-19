@@ -101,3 +101,7 @@ function renderComments(comments, storyId){
   })
 }
 fetchTopStories();
+
+function toggleDarkLight(){
+	
+}
