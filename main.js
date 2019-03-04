@@ -19,6 +19,7 @@ function fetchStories(data){
 }
 //Array of top 30 stories in json format as the parameter to this function.
 function renderStories(stories){
+	let index = 1;
 	return stories.map((story)=>{
 		const userUrl = `https://news.ycombinator.com/user?id=${story.by}`;
 	    const storyItemUrl = `https://news.ycombinator.com/item?id=${story.id}`;
@@ -26,7 +27,7 @@ function renderStories(stories){
 	    const html = `
 	      <div class='story' id='${story.id}'>
 	        <h3 class='title'>
-	          ${story.url ? `<a href='${story.url}' target='_blank'>${story.title}</a>`
+	          ${index}. ${story.url ? `<a href="#" onclick="openModal('${story.url}')">${story.title}</a>`
 	            : `<a href='javascript:void(0)' onclick="toggleStoryText('${story.id}')" >${story.title}</a>`}
 	        </h3>
 
@@ -38,7 +39,7 @@ function renderStories(stories){
 	            <span
 	              onclick="fetchOrToggleComments('${story.kids}','${story.id}')"
 	              class='comments'
-	            > [toggle ${story.descendants} comments] </span>`
+	            > | ${story.descendants} comments </span>`
 	          : '' }
 	        </div>
 
@@ -49,6 +50,7 @@ function renderStories(stories){
 	        <div id='comments-${story.id}' style='display: block;'></div>
 	      </div> `
     	document.getElementById('hn').insertAdjacentHTML('beforeend', html);
+    	index++;
 	})
 }
 //Toggles the story text if there is no story url.
@@ -111,4 +113,7 @@ function toggleDarkLight(){
 	var currentClass = body.className;
 
 	body.className = (currentClass === "dark-mode"? "light-mode" : "dark-mode");
+}
+function openModal(url){
+	// console.log(url);
 }

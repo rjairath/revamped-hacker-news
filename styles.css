@@ -16,11 +16,6 @@
   h2 { text-align: center; }
   h3 { margin: 0; font-size: 22px; }
   .main { margin: 0 auto; }
-  .score {
-    font-size: 20px;
-    color: #f1c40f;
-    margin-right: 4px;
-  }
   .storyText { margin-top: 8px; }
   .comments {
     color: #1abc9c;
@@ -28,13 +23,6 @@
     font-size: 20px;
   }
   .comments:hover { color: #16a085; }
-  .story-by,
-  .comment-by {
-    font-size: 20px;
-    color: #7f8c8d;
-    margin-left: 4px;
-    margin-right: 4px;
-  }
   .story-by:hover,
   .comment-by:hover{ color: #bdc3c7; }
   .comment {
@@ -76,11 +64,27 @@
   .dark-mode .story {
     margin: 4px;
     padding: 8px;
-    border: 2px solid #fff;
-    border-radius: 15px;
+    /*border: 2px solid #fff;
+    border-radius: 15px;*/
   }
+  .dark-mode .score {
+    font-size: 20px;
+    color: #f1c40f;
+    margin-right: 4px;
+    margin-left: 30px;
+  }
+  .dark-mode
+  .story-by,
+  .comment-by {
+    font-size: 20px;
+    color: #f1c40f;
+    margin-left: 4px;
+    margin-right: 4px;
+  }
+
+  /*light mode*/
   .light-mode{
-    background-color: #ffffff;
+    background-color: #FFFFDD;
     font-family: "Comic Sans MS", "Helvetica", Arial, sans-serif;
     font-size: 18px;
     line-height: 1.6;
@@ -90,6 +94,20 @@
   .light-mode .story{
     margin: 4px;
     padding: 8px;
-    border: 2px solid #0c0d0e;
-    border-radius: 15px;
+    border: 2px sol/*id #0c0d0e;
+    border-radius: 15px;*/
+  }
+  .light-mode .score {
+    font-size: 20px;
+    color: #ce0c0c;
+    margin-right: 4px;
+    margin-left: 30px;
+  }
+  .light-mode
+  .story-by,
+  .comment-by {
+    font-size: 20px;
+    color: #ce0c0c;
+    margin-left: 4px;
+    margin-right: 4px;
   }
