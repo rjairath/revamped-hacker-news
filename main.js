@@ -76,7 +76,7 @@ function fetchOrToggleComments(kids, storyId){
 	}
 	state[storyId] ? toggleAllComments(storyId) : fetchComments(kids, storyId)
 }
-function ToggleComment(){
+function toggleComment(commentId){
 	const comment = document.getElementById(commentId)
 	const toggle = document.getElementById(`toggle-${commentId}`)
 	comment.style.display = (comment.style.display === 'block') ? 'none' : 'block'
@@ -92,7 +92,7 @@ function renderComments(comments, storyId){
 				href='javascript:void(0)'
 				id='toggle-${comment.id}'
 				class='toggle-comment'>[ - ]</span>
-			<a href='${userUrl}' class='comment-by'> ${comment.by}</a>	
+			<a href='${userUrl}' class='comment-by' target="_blank"> ${comment.by}</a>	
 			<div id=${comment.id} class='comment-text' style='display:block;'>
 			${comment.text}
 			</div>
@@ -116,4 +116,13 @@ function toggleDarkLight(){
 }
 function openModal(url){
 	// console.log(url);
+	var modal = document.querySelector(".modal");
+	var iframe = document.querySelector("iframe");
+
+	modal.classList.add("show-modal");
+	iframe.setAttribute("src", url);
+}
+function closeModal(){
+	var modal = document.querySelector(".modal");
+	modal.classList.remove("show-modal");
 }
