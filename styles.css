@@ -31,6 +31,9 @@
     margin-top: 4px;
   }
   .comment-text { padding: 8px; overflow-x: scroll; }
+  .comment-text p{
+    margin: 5px 0 !important;
+  }
   .toggle-comment { color: #1abc9c; cursor: pointer; }
   .toggle-comment:hover { color: #16a085; }
   .hnLink { color: #e67e22; }
