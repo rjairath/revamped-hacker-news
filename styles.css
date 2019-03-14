@@ -51,10 +51,30 @@
     .main { max-width: 100%; }
   }
 
-  .heading button{
+  /*.heading button{
     position: absolute;
     right: 60px;
     top: 35px;
+  }*/
+  .heading{
+    display: flex;
+    justify-content: center;
+    flex-flow: row wrap;
+  }
+  .scoreComments{
+    display: flex;
+    justify-content: flex-start;
+    flex-flow: row wrap;
+  }
+  .titleDiv{
+    display: flex;
+    justify-content: flex-start;
+    flex-flow: row nowrap;
+  }
+  #toggleButton{
+    position: fixed;
+    top: 30px;
+    right: 30px;
   }
   .dark-mode {
     background-color: #282828;
@@ -156,4 +176,18 @@
     width: 100%;
     height: 90%;
     margin-top: 15px;
+  }
+  @media only screen and (max-width: 500px){
+    #toggleButton{
+      bottom: 30px;
+      top: unset;
+    }
+    .titleDiv .index{
+      display: none;
+    }
+    .light-mode .score,
+    .dark-mode .score{
+      margin-left: 0px;
+    }
+
   }

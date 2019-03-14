@@ -25,23 +25,27 @@ function renderStories(stories){
 	    const storyItemUrl = `https://news.ycombinator.com/item?id=${story.id}`;
 
 	    const html = `
-	      <div class='story' id='${story.id}'>
-	        <h3 class='title'>
-	          ${index}. ${story.url ? `<a href="#" onclick="openModal('${story.url}')">${story.title}</a>`
-	            : `<a href='javascript:void(0)' onclick="toggleStoryText('${story.id}')" >${story.title}</a>`}
-	        </h3>
+	      	<div class='story' id='${story.id}'>
+	      		<div class="titleDiv">
+		      		<h3 class="index">${index}.</h3>
+			        <h3 class='title'>
+			           ${story.url ? `<a href="#" onclick="openModal('${story.url}')">${story.title}</a>`
+			            : `<a href='javascript:void(0)' onclick="toggleStoryText('${story.id}')" >${story.title}</a>`}
+			        </h3>
+		        </div>
+		        <div class="scoreComments">
+			        <span class='score'> ${story.score} </span> points by
+			        <a href='${userUrl}' target='_blank' class='story-by'> ${story.by}</a>
 
-	        <span class='score'> ${story.score} </span> points by
-	        <a href='${userUrl}' target='_blank' class='story-by'> ${story.by}</a>
-
-	        <div class='toggle-view'>
-	          ${story.kids ? `
-	            <span
-	              onclick="fetchOrToggleComments('${story.kids}','${story.id}')"
-	              class='comments'
-	            > | ${story.descendants} comments </span>`
-	          : '' }
-	        </div>
+			        <div class='toggle-view'>
+			          ${story.kids ? `
+			            <span
+			              onclick="fetchOrToggleComments('${story.kids}','${story.id}')"
+			              class='comments'
+			            > | ${story.descendants} comments </span>`
+			          : '' }
+		        </div>
+        	</div>
 
 	        ${story.text ?
 	          `<div class='storyText' id='storyText-${story.id}' style='display:none;'>
