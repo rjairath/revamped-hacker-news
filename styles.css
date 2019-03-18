@@ -189,5 +189,8 @@
     .dark-mode .score{
       margin-left: 0px;
     }
-
+    .light-mode .story,
+    .dark-mode .story{
+      border-bottom: solid 2px;
+    }
   }
