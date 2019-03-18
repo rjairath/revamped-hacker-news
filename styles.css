@@ -76,9 +76,11 @@
     top: 30px;
     right: 30px;
   }
+
+  /*dark mode*/
   .dark-mode {
     background-color: #282828;
-    font-family: "Comic Sans MS", "Helvetica", Arial, sans-serif;
+    font-family: Impact, Charcoal, sans-serif;
     font-size: 18px;
     line-height: 1.6;
     color: #bdc3c7;
@@ -102,6 +104,9 @@
     color: #f1c40f;
     margin-left: 4px;
     margin-right: 4px;
+  }
+  .dark-mode .modal-content{
+    background-color: #282828;
   }
 
   /*light mode*/
@@ -132,6 +137,10 @@
     margin-left: 4px;
     margin-right: 4px;
   }
+  .light-mode .modal-content{
+    background-color: #FFFFDD;
+  }
+
   /*modal*/
   .modal{
     position: fixed;
@@ -151,7 +160,7 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: white;
+    /*background-color: white;*/
     padding: 1rem 1.5rem;
     width: 90%;
     height: 90%;
@@ -163,8 +172,9 @@
     line-height: 1.5rem;
     text-align: center;
     cursor: pointer;
-    border-radius: 0.25rem;
-    background-color: lightgray;
+    color: #2ecc71;
+    font-weight: bold;
+    font-size: 30px;
   }
   .show-modal {
     opacity: 1;

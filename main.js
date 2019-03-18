@@ -128,9 +128,11 @@ function openModal(url){
 	}
 	var modal = document.querySelector(".modal");
 	var iframe = document.querySelector("iframe");
+	var openLinkTag = document.querySelector("#openLinkTag");
 
 	modal.classList.add("show-modal");
 	iframe.setAttribute("src", url);
+	openLinkTag.setAttribute("href", url);
 }
 function closeModal(){
 	var modal = document.querySelector(".modal");
