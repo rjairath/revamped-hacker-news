@@ -136,5 +136,8 @@ function openModal(url){
 }
 function closeModal(){
 	var modal = document.querySelector(".modal");
+	var iframe = document.querySelector("iframe");
+
 	modal.classList.remove("show-modal");
+	iframe.setAttribute("src", "about:blank");
 }
