@@ -112,7 +112,7 @@
   /*light mode*/
   .light-mode{
     background-color: #FFFFDD;
-    font-family: "Comic Sans MS", "Helvetica", Arial, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     font-size: 18px;
     line-height: 1.6;
     color: #0c0d0e;
@@ -121,7 +121,7 @@
   .light-mode .story{
     margin: 4px;
     padding: 8px;
-    border: 2px sol/*id #0c0d0e;
+    /*border: 2px solid #0c0d0e;
     border-radius: 15px;*/
   }
   .light-mode .score{
